@@ -1,0 +1,47 @@
+#!/usr/bin/env ruby
+
+require 'fictionArt'
+require 'optparse'
+
+options       = {}
+invert_chars  = false
+
+opt_parser = OptionParser.new do |opts|
+  opts.banner = 'Usage: fictionArt [options] <name_of_a_fictional_character>'
+
+  opts.on('-w', '--width WIDTH', 'Width of the finished Ascii Art (Default: 100)') do |width|
+    options["width"] = width.to_i
+  end
+
+  opts.on('-c', '--color', 'Switch to use colored terminal output (Default: true)') do
+    options["color"] = true
+  end
+
+  opts.on('-i', '--invert-chars', 'Invert the character map. Depending on your terminal and image this can make the image clearer (or a lot worse)') do
+    invert_chars = true
+  end
+
+  opts.on_tail("-h", "--help", "Show this message") do
+    puts opts
+    exit
+  end
+
+end
+
+begin
+  opt_parser.parse!
+rescue OptionParser::MissingArgument => e
+  puts "ERROR: #{e.message.capitalize}\n#{opt_parser}"
+  exit
+end
+
+if ARGV.length == 0
+  puts "ERROR: You must specify a name of a character \n#{opt_parser}"
+  exit
+end
+
+fiction = FictionArt.new(ARGV[0])
+
+fiction.image_chars = fiction.image_chars.reverse if invert_chars
+
+puts fiction.createAscii(options)
