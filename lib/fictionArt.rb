@@ -13,7 +13,7 @@ class FictionArt
   def initialize(text = "nothing")
   	
   	@image_chars ||= ' .~:+=o*x^%#@'.chars.to_a
-	check = Dir.glob("images/#{text}.jpg")
+	check = Dir.glob("#{__dir__}/../images/#{text}.jpg")
 
     if check.length == 0
 	  if text == "nothing"
@@ -97,9 +97,9 @@ class FictionArt
 
   # Listing all currently possible characters
   def list_all
-  	list = Dir.glob("images/*.jpg")
+  	list = Dir.glob("#{__dir__}/../images/*.jpg")
   	list.each do |character|
-  		puts character.chomp(".jpg").slice(7..-1)
+  		puts character[/.*images\/(.*).jpg/,1]
   	end
   end
 
@@ -107,10 +107,10 @@ class FictionArt
   # Checking matching characters from character inputted
   def check_possible(text)
   	puts "Possible Characters:"
-  	list = Dir.glob("images/*.jpg")
+  	list = Dir.glob("#{__dir__}/../images/*.jpg")
   	
   	list.each do |character|
-  	  character = character.chomp(".jpg").slice(7..-1)
+  	  character = character[/.*images\/(.*).jpg/,1]
   	  if character.downcase.include? text.downcase
   		puts character
   	  elsif text.downcase.include? character.downcase
