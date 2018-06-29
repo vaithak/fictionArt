@@ -31,3 +31,8 @@ $ fictionArt ironman
 ```
 **Output**  
 ![image](https://github.com/vaithak/fictionArt/blob/master/example_image.png)  
+
+### Help
+```
+$ fictionArt -h
+```  
