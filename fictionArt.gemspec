@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'fictionArt'
-  s.version     = '0.0.7'
+  s.version     = '0.0.8'
   s.executables << 'fictionArt'
   s.date        = '2018-06-29'
   s.summary     = "Display ascii art of animated fictional characters on your terminal"
