@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'fictionArt'
-  s.version     = '0.0.8'
+  s.version     = '1.0.1'
   s.executables << 'fictionArt'
   s.date        = '2018-06-29'
   s.summary     = "Display ascii art of animated fictional characters on your terminal"
@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.add_dependency('rmagick', '2.16.0')
   s.add_dependency('rainbow', '3.0.0')
 
-  s.homepage    = 'http://rubygems.org/gems/fictionArt'
+  s.homepage    = 'https://github.com/vaithak/fictionArt'
   s.license     = 'MIT'
   s.metadata    = { "source_code_uri" => "https://github.com/vaithak/fictionArt" }
 end
