@@ -11,11 +11,6 @@ A command line tool written in ruby that displays ascii art of famous animated f
 ## Installation  
 
 ### Linux  
-**Paste the following lines in your .bashrc file**  
-```
-  export GEM_HOME=$HOME/.gem
-  export GEM_PATH=$HOME/.gem
-```  
 
 **Run the following commands after (without the '$' sign) ruby has been installed succesfully**  
 ```
