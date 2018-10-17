@@ -18,4 +18,8 @@ class FictionArtTest < Test::Unit::TestCase
     assert_equal(true, check.status)
   end
 
+  def test_bugs_bunny
+    check = FictionArt.new("bugsbunny")
+    assert_equal(true, check.status)
+  end
 end
