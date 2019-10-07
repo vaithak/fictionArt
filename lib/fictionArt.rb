@@ -1,4 +1,4 @@
-require 'RMagick'
+require 'rmagick'
 require 'uri'
 require 'open-uri'
 require 'rainbow'
@@ -12,8 +12,8 @@ class FictionArt
   # Constructor function of FictionArt class
   def initialize(text = "nothing")
   	
-  	@image_chars ||= ' .~:+=o*x^%#@'.chars.to_a
-	check = Dir.glob("#{__dir__}/../images/#{text}.jpg")
+    @image_chars ||= ' .~:+=o*x^%#@'.chars.to_a
+    check = Dir.glob("#{__dir__}/../images/#{text}.jpg")
 
     if check.length == 0
 	  if text == "nothing"
@@ -25,7 +25,7 @@ class FictionArt
 	  	@status = false   # for tests
 	  	puts 
 	  	check_possible(text)
-      end
+          end
     else
       open(check[0]) { |file| @data = file.read }
       @status = true   # for tests
@@ -81,7 +81,7 @@ class FictionArt
 
 	  output << border
 	  return output
-	end
+    end
   end
 
 
