@@ -1,4 +1,4 @@
-require 'RMagick'
+require 'rmagick'
 require 'uri'
 require 'open-uri'
 require 'rainbow'
